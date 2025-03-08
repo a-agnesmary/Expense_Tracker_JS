@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        
+        <label for="currency" style="font-size: 18px; font-weight: bold;">Select Currency:</label>
+        <select id="currency">
+            <option value="₹">INR (₹)</option>
+            <option value="$">USD ($)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+        </select>
+        
+        <h2>Balance: <span id="balance">₹ 0.00</span></h2>
+        
+        <div class="amount-summary">
+            <div class="income">
+                <h3>Income</h3>
+                <p><span id="total-income">₹ 0.00</span></p>
+            </div>
+            <div class="expense">
+                <h3>Expense</h3>
+                <p><span id="total-expense">₹ 0.00</span></p>
+            </div>
+        </div>
+
+        <form id="transaction-form">
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <input type="text" id="description" placeholder="Enter Description" required>
+            <input type="number" id="amount" placeholder="Enter Amount" required>
+            <button type="submit" id="transaction-btn">Add Transaction</button>
+        </form>
+
+        <button id="show-income-list"> View Income List</button>
+        <button id="show-expense-list">View Expense List</button>
+    </div>
+
+    <!-- Transaction List Panel (Top-Right) -->
+    <div id="list-panel">
+        <button id="close-panel">X</button>
+        <h3 id="list-title">Transaction List</h3>
+        <ul id="transaction-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
